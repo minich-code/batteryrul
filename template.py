@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 
 # Define the package name 
-package_name = "BatteryRUL"
+package_name = "RULBattery"
 
 # List the files to be created 
 list_of_files = [
