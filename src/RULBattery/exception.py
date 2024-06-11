@@ -1,5 +1,5 @@
 import sys 
-from src.BatteryRUL import logging
+from src.RULBattery import logging
 
 # Method to extract error message detail 
 def error_message_detail(error, error_details_object: sys):
