@@ -1,7 +1,7 @@
 from src.RULBattery import logging 
 from src.RULBattery.pipelines.pip_01_data_ingestion import DataIngestionPipeline
-
 from src.RULBattery.pipelines.pip_02_data_validation import DataValidationPipeline
+from src.RULBattery.pipelines.pip_03_data_transformation import DataTransformationPipeline
 
 
 COMPONENT_01_NAME = "DATA_INGESTION COMPONENT"
@@ -27,3 +27,14 @@ except Exception as e:
     logging.exception(e)
     raise e
 
+
+COMPONENT_03_NAME = "DATA TRANSFORMATION COMPONENT"
+try:
+    logging.info(f"# ====================== {COMPONENT_03_NAME} Started! ================================= #")
+    data_transformation_pipeline = DataTransformationPipeline()
+    data_transformation_pipeline.run()
+    logging.info(f"## ======================== {COMPONENT_03_NAME} Terminated Successfully!======================= ##\n\nx******************x")
+
+except Exception as e:
+    logging.exception(e)
+    raise e
