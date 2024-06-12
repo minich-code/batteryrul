@@ -1,1 +1,13 @@
-key: val
+COLUMNS:
+  cycle_index: int64  
+  discharge_time_s: float64
+  decrement_3_6_3_4v_s: float64
+  max_voltage_discharge_v: float64
+  min_voltage_charge_v: float64
+  time_at_4_15v_s: float64
+  time_constant_current_s: float64
+  charging_time_s: float64
+  rul: int64 
+
+TARGET_COLUMN:
+  name: rul

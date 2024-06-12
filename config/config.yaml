@@ -1,7 +1,14 @@
-artifacts_root: artifacts 
+artifacts_root: artifacts
 
-data_ingestion: 
-  root_dir: artifacts/data_ingestion
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion 
   mongo_uri: mongodb+srv://Minich:Mydatabase.456@minich-data-repository.gzlkk1s.mongodb.net/
   database_name: battery_experiments
-  collection_name: batter_rul
+  collection_name: battery_rul
+
+
+data_validation:
+  root_dir: artifacts/data_validation
+  data_dir: artifacts/data_ingestion/battery_rul.csv
+  STATUS_FILE: artifacts/data_validation/status.txt
