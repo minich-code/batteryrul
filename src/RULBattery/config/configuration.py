@@ -1,7 +1,7 @@
 from src.RULBattery.utils.commons import read_yaml, create_directories
 from src.RULBattery.constants import *
-from src.RULBattery.entity.config_entity import (DataIngestionConfig, DataValidationConfig, DataTransformationConfig)
-
+from src.RULBattery.entity.config_entity import (DataIngestionConfig, DataValidationConfig, DataTransformationConfig, 
+                                                 ModelTrainerConfig)
 
 
 # Creating a ConfigurationManager class to manage configurations
@@ -71,4 +71,39 @@ class ConfigurationManager:
             categorical_cols=list(config.categorical_cols)
         )
         return data_transformation_config
+    
+
+# Model Trainer config 
+    def get_model_trainer_config(self) -> ModelTrainerConfig:
+        config = self.config.model_trainer
+        params = self.params.XGBRegressor
+        schema =  self.schema.TARGET_COLUMN
+        
+        
+        create_directories([config.root_dir])
+
+
+        model_trainer_config = ModelTrainerConfig(
+            root_dir=config.root_dir,
+            train_data_path = config.train_data_path,
+            test_data_path = config.test_data_path,
+            model_name = config.model_name,
+            # XGBOOST parameters 
+            objective=params['objective'],
+            booster=params['booster'],
+            n_estimators=params['n_estimators'],
+            learning_rate=params['learning_rate'],
+            max_depth=params['max_depth'],
+            min_child_weight=params['min_child_weight'],
+            gamma=params['gamma'],
+            subsample=params['subsample'],
+            colsample_bytree=params['colsample_bytree'],
+            reg_alpha=params['reg_alpha'],
+            reg_lambda=params['reg_lambda'],
+            random_state=params['random_state'],
+            scale_pos_weight=params['scale_pos_weight'],
+            
+
+        )
+        return model_trainer_config
 

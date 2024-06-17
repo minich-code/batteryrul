@@ -27,3 +27,26 @@ class DataTransformationConfig:
     data_path: Path
     numerical_cols: list
     categorical_cols: list
+
+
+# Model trainer Entity 
+@dataclass()
+class ModelTrainerConfig:
+    root_dir: Path
+    train_data_path: Path
+    test_data_path: Path
+    model_name: str
+    # XGBOOST parameters 
+    objective: str  
+    booster: str
+    n_estimators: int
+    learning_rate: float
+    max_depth: int
+    min_child_weight: int
+    gamma: float
+    subsample: float
+    colsample_bytree: float
+    reg_alpha: float
+    reg_lambda: float
+    random_state: int
+    scale_pos_weight: int

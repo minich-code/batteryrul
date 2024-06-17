@@ -14,10 +14,6 @@ from sklearn.pipeline import Pipeline
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import OneHotEncoder, MinMaxScaler
 
-
-
-
-
 # Create a class to handle the actual data transformation process
 
 class DataTransformation:
