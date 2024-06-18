@@ -15,30 +15,28 @@ class PredictionPipeline:
 
     def make_predictions(self, features):
         try:
-            logging.info("Making predictions")
+            # log message 
+            logging.info("Making Predictions")
 
-            # Define the model and preprocessor_obj 
             model_path = os.path.join("artifacts", "model_trainer", "model.joblib")
             preprocessor_path = os.path.join("artifacts", "data_transformation", "preprocessor_obj.joblib")
-            
-            # Load the preprocessor and the model 
+
+            # load the preprocessor and model object
             preprocessor_obj = load_object(file_path=preprocessor_path)
             model = load_object(file_path=model_path)
 
-            # Transform the features 
+            # Transform the features
             features_transformed = preprocessor_obj.transform(features)
 
-            # Make predictions 
+            # Make predictions
             predictions = model.predict(features_transformed)
 
-            # Return the predictions 
             return predictions
-        
         except Exception as e:
-            raise FileOperationError (e, sys)
+            raise FileOperationError(e, sys)
         
+# Create a class to represent the input features 
 
-# Create a class to represent input features 
 class CustomData:
     def __init__(self, **kwargs):
         # Initiate the attributes using kwargs
@@ -58,3 +56,5 @@ class CustomData:
         
         except Exception as e:
             raise FileOperationError(e, sys)
+           
+            

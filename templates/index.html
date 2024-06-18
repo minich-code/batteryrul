@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battery RUL Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Battery RUL Prediction</h1>
+        <div class="form-container">
+            <form action="/predict" method="post">
+                <div class="input-group">
+                    <label for="cycle_index">Cycle Index:</label>
+                    <input type="text" id="cycle_index" name="cycle_index" required>
+                </div>
+                <div class="input-group">
+                    <label for="discharge_time_s">Discharge Time (s):</label>
+                    <input type="text" id="discharge_time_s" name="discharge_time_s" required>
+                </div>
+                <div class="input-group">
+                    <label for="decrement_3_6_3_4v_s">Decrement 3.6-3.4V (s):</label>
+                    <input type="text" id="decrement_3_6_3_4v_s" name="decrement_3_6_3_4v_s" required>
+                </div>
+                <div class="input-group">
+                    <label for="max_voltage_discharge_v">Max. Voltage Discharge (V):</label>
+                    <input type="text" id="max_voltage_discharge_v" name="max_voltage_discharge_v" required>
+                </div>
+                <div class="input-group">
+                    <label for="min_voltage_charge_v">Min. Voltage Charge (V):</label>
+                    <input type="text" id="min_voltage_charge_v" name="min_voltage_charge_v" required>
+                </div>
+                <div class="input-group">
+                    <label for="time_at_4_15v_s">Time at 4.15V (s):</label>
+                    <input type="text" id="time_at_4_15v_s" name="time_at_4_15v_s" required>
+                </div>
+                <div class="input-group">
+                    <label for="time_constant_current_s">Time Constant Current (s):</label>
+                    <input type="text" id="time_constant_current_s" name="time_constant_current_s" required>
+                </div>
+                <div class="input-group">
+                    <label for="charging_time_s">Charging Time (s):</label>
+                    <input type="text" id="charging_time_s" name="charging_time_s" required>
+                </div>
+                <button type="submit" class="button">Predict</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
