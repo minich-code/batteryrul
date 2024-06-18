@@ -18,5 +18,6 @@ streamlit
 # mlflow 
 mlflow
 dvc
+dagshub
 
 -e .

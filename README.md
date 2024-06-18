@@ -77,3 +77,9 @@ Input: None directly, but it uses the configuration files and the classes define
 
 Output: Executes the data ingestion process and logs the completion status. The imported data from MongoDB (possibly saved to a CSV file).
 ``
+
+``
+export MLFLOW_TRACKING_URI=https://dagshub.com/minich-code/batteryrul.mlflow
+export MLFLOW_TRACKING_USERNAME=minich-code
+export MLFLOW_TRACKING_PASSWORD=cadc5e14617d7fae5ed8a6532906afca14f3b0f9
+``
