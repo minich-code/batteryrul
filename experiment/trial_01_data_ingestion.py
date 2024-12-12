@@ -42,7 +42,7 @@ class ConfigurationManager:
         # Get data ingestion section from config
         config = self.config.data_ingestion
 
-        # Create DataIngestionConfig object
+        # Creating the DataIngestionConfig object
         create_directories([config.root_dir])
 
         # Create and return DataIngestionConfig object
